@@ -1,12 +1,12 @@
 // Business Logic for AddressBook ---------
 function AddressBook() {
-  this.contacts = {};
+  this.contacts = { }; 
   this.currentId = 0;
 }
 
 AddressBook.prototype.addContact = function(contact) {
   contact.id = this.assignId();
-  this.contacts[contact.id] = contact;
+  this.contacts[contact.id] = contact; //important line
 }
 
 AddressBook.prototype.assignId = function() {
@@ -30,28 +30,33 @@ AddressBook.prototype.deleteContact = function(id) {
 }
 
 // Business Logic for Contacts ---------
-function Contact(firstName, lastName, phoneNumber, email, address) {
+function Contact(firstName, lastName, phoneNumber) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.phoneNumber = phoneNumber;
-  this.email = email;
-  this.address = address;
-}
+  this.address = {};
+  }
 
-Contact.prototype.fullName = function() {
-  return this.firstName + " " + this.lastName;
   
-}
-
+  Contact.prototype.fullName = function() {
+    return this.firstName + " " + this.lastName;
+  }
+  
+  function Address(physical, email) {
+    this.physical = physical;
+    this.email = email;
+  }
+  
 // User Interface Logic ---------
 let addressBook = new AddressBook();
 
 function displayContactDetails(addressBookToDisplay) {
   let contactsList = $("ul#contacts");
   let htmlForContactInfo = "";
+  
   Object.keys(addressBookToDisplay.contacts).forEach(function(key) {
     const contact = addressBookToDisplay.findContact(key);
-    htmlForContactInfo += "<li id=" + contact.id + ">" + contact.firstName + " " + contact.lastName + " " + contact.email + "</li>";
+    htmlForContactInfo += "<li id=" + contact.id + ">" + contact.firstName + " " + contact.lastName + "</li>";
   });
   contactsList.html(htmlForContactInfo);
 };
@@ -62,9 +67,11 @@ $(document).ready(function() {
     const inputtedFirstName = $("input#new-first-name").val();
     const inputtedLastName = $("input#new-last-name").val();
     const inputtedPhoneNumber = $("input#new-phone-number").val();
-    const inputtedEmail = $("input#email").val();
     const inputtedAddress = $("input#address").val();
-    let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmail, inputtedAddress);
+    const inputtedEmail = $("input#email").val();
+    let newAddress = new Address(inputtedAddress, inputtedEmail);
+    let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
+    
     addressBook.addContact(newContact);
     displayContactDetails(addressBook);
 
@@ -74,11 +81,12 @@ $(document).ready(function() {
       $(".first-name").html(contact.firstName);
       $(".last-name").html(contact.lastName);
       $(".phone-number").html(contact.phoneNumber);
-      $(".email").html(contact.email);
-      $(".address").html(contact.address);
+      $(".address").html(contact.address.physical);
+      $(".email").html(contact.address.email);
       let buttons = $("#buttons");
       buttons.empty();
       buttons.append("<button class='deleteButton' id=" +  + contact.id + ">Delete</button>");
     }
   });
 });
+

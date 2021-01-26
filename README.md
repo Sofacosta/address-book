@@ -3,7 +3,7 @@
 #### Project initiated: 01-25-2021
 #### By Epicodus 
 ## Project Description
-The code provided in this project is not mine, this is an excercise provided by Epicodus and this is to practice the concepts of Javascript Objects, dynamic contact data, event bubbling and event delegation. 
+The code provided is to practice the concepts of Javascript Objects, dynamic contact data, event bubbling and event delegation. This code is not finished, we need to add functionallity that allows a user to record multiple addresses and remove any additional address fields when the form is submitted. 
  
 ## Technologies Used
 * HTML

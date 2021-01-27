@@ -71,7 +71,7 @@ $(document).ready(function() {
     const inputtedEmail = $("input#email").val();
     let newAddress = new Address(inputtedAddress, inputtedEmail);
     let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
-    
+    newContact.address = newAddress
     addressBook.addContact(newContact);
     displayContactDetails(addressBook);
 

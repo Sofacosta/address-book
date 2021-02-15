@@ -1,9 +1,10 @@
 # Address Book 
-#### Project provided by Epicodus
+#### Project to study Object-Oriented Javascript
 #### Project initiated: 01-25-2021
-#### By Epicodus 
+#### Project updated: 02-15-2021
+#### By Sofia Acosta , Salim Mayan and Andrew Lawson 
 ## Project Description
-The code provided is to practice the concepts of Javascript Objects, dynamic contact data, event bubbling and event delegation. This code is not finished, we need to add functionallity that allows a user to record multiple addresses and remove any additional address fields when the form is submitted. 
+The code provided is to practice the concepts of Javascript Objects, dynamic contact data, event bubbling and event delegation. 
  
 ## Technologies Used
 * HTML
@@ -11,9 +12,18 @@ The code provided is to practice the concepts of Javascript Objects, dynamic con
 * CSS
 * JQuery
 ## Set up / Installation requirements
-* Clone this repository into your Github profile
+* * Download a .zip copy of this repository by clicking the green "code" button. 
+* Launch the index.html file into your browser
+ 
+OR
+ 
+* Open your terminal and navigate to the folder where you would like to save this project
+* Clone this repository in your terminal: $ git clone
+* Go to the top level of the repository: $ cd programming-language-suggester
+* Open index.html into your browser: $ open index.html
+
 ## Known Bugs
-* This code is incomplete and needs to be revised in Lesson 20 - [Epicodus Intermedia Javascript](https://www.learnhowtoprogram.com/intermediate-javascript/object-oriented-javascript/address-book-more-event-delegation)
+* No known bugs 
 ## License
 * [MIT](https://choosealicense.com/licenses/mit)
 * Copyright 2021 Sofia Acosta
